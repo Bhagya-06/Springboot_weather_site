@@ -1,11 +1,11 @@
 FROM maven:3.9.6-eclipse-temurin-21 AS builder
-WORKDIR /project
+WORKDIR /app
 COPY . .
-WORKDIR /weather_project/project
+WORKDIR /app/weather_project/project
 RUN mvn clean package -DskipTests
 
 FROM eclipse-temurin:21-jdk-alpine
-WORKDIR /project
-COPY --from=builder /weather_project/project/target/project-0.0.1-SNAPSHOT.jar project.jar
+WORKDIR /app
+COPY --from=builder /app/weather_project/project/target/project-0.0.1-SNAPSHOT.jar project.jar
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "project.jar"]
