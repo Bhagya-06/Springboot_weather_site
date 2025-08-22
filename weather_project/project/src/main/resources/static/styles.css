@@ -1,0 +1,66 @@
+body {
+    margin: 0;
+    padding: 50px;
+    font-family: monaco, monospace;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.5);
+    background: url("/GIWH.gif") no-repeat center center fixed;
+    background-size: cover;
+}
+
+h1{
+	font-size: 80px;
+	margin-bottom: 12px;
+}
+
+form {
+    width: 350px;
+    padding: 15px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+input, button {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+button {
+    background: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+.resultbox {
+    padding: 20px;
+    margin: 15px auto;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    background: #f5f5f5;
+}
+
+.resultbox.hot {
+    background: linear-gradient(to right, #ff9966, #ff5e62);
+    color: white;
+}
+
+.resultbox.cold {
+    background: linear-gradient(to right, #007bff, #00d2ff);
+    color: white;
+}
+
+.resultbox.mild {
+    background: linear-gradient(to right, #56ab2f, #a8e063);
+    color: #222;
+}
+
+.weather-icon {
+    width: 100px;
+    height: 100px;
+}
+
