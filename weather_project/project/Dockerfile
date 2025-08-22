@@ -1,10 +1,10 @@
-FROM maven:3.9.6-eclipse-temurin-21 AS builder
+FROM maven:3.9.6-eclipse-temurin-24 AS builder
 WORKDIR /app
 COPY . .
 WORKDIR /app/weather_project/project
 RUN mvn clean package -DskipTests
 
-FROM eclipse-temurin:21-jdk-alpine
+FROM eclipse-temurin:24-jdk-alpine
 WORKDIR /app
 COPY --from=builder /app/weather_project/project/target/project-0.0.1-SNAPSHOT.jar project.jar
 EXPOSE 8080
