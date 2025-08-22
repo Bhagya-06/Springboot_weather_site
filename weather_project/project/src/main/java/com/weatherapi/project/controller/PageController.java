@@ -19,7 +19,7 @@ public class PageController {
 
     @GetMapping("/results")
     public String getWeather(@RequestParam("city") String city, Model model) {
-        String apiUrl = "http://localhost:8080/api/weather?city=" + city;
+        String apiUrl = "https://springboot-weather-site.onrender.com/api/weather?city=" + city;
 
         RestTemplate restTemplate = new RestTemplate();
         Map<String, Object> response = restTemplate.getForObject(apiUrl, Map.class);
@@ -64,3 +64,4 @@ public class PageController {
         return "index";
     }
 }
+
